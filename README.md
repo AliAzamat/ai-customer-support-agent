@@ -65,7 +65,6 @@ npx tsx src/evals/gate.ts          # run the eval gate
 
 ## Limitations
 
-- **Not deployable as committed:** the Dockerfile expects `package.json`, a `build` script, and `dist/index.js`, none of which exist; `start()` in `server.ts` is exported but never called.
 - **Keyword search has no stopword filtering,** so out-of-scope questions still match articles on words like "the" and "is" (the swallow question returns two articles). The refusal path still has to come from the model.
 - Keyword scores (integers) and cosine scores (0–1) are merged on one scale, so keyword hits always outrank semantic ones.
 - The knowledge base has three articles and the eval suite three cases; embeddings are recomputed on every start.
